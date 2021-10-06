@@ -1,17 +1,21 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-	<title>WAI-ARIA - an introduction to Accessible Rich Internet Applications / Patrick H. Lauke</title>
+	<title>WAI-ARIA - an introduction to Accessible Rich Internet Applications / Prem Nawaz Khan</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=792, initial-scale=1">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
+
 	<link rel="stylesheet" href="shower/themes/redux/styles/screen.css">
 	<link rel="stylesheet" href="shower/themes/redux/styles/overrides.css">
 	<link rel="stylesheet" href="highlight/styles/sunburst.css">
 	<script src="highlight/highlight.pack.js"></script>
+
 	<script>hljs.initHighlightingOnLoad();</script>
+
 </head>
 <body class="list">
+
 <header class="caption">
 	<h1>WAI-ARIA</h1>
 	<p>An introduction to Accessible Rich Internet Applications</p>
@@ -24,7 +28,7 @@
     	<h2>WAI-ARIA</h2>
 		<p>An introduction to <strong>Accessible Rich Internet Applications</strong></p>
     </div>
-	<p class="info">Patrick H. Lauke</p>
+	<p class="info">Prem Nawaz Khan</p>
 	<img src="pictures/background-cover.jpg" alt="" class="cover">
 </div></section>
 
@@ -77,16 +81,6 @@
 		<li>however, ARIA is (almost) exclusively about how to ensure that web content is correctly conveyed to assistive technologies (screen readers, screen magnifiers with screen reading capability, etc)</li>
 	</ul>
 </div></section>
-
-<!-- -->
-
-<section class="slide statement"><div>
-<div>
-	<p>github.com/patrickhlauke/aria</p>
-</div>
-</div></section>
-
-<!-- -->
 
 <section class="slide cover impact"><div>
     <div><p>code examples here are simplified<br><small>(but will hopefully convey the right concepts)</small></p></div>
@@ -325,8 +319,8 @@
 <!-- -->
 
 <section class="slide"><div>
-	<img src="pictures/diagram-aria.png" alt="Diagram: ARIA defines 'role' and 'aria-*' attributes">
-	<p>at a high level, ARIA defines various <code>role</code> and <code>aria-*</code> attributes that can be added to your markup</p>
+	<img src="pictures/accessibleelement.png" alt="Diagram: ARIA defines 'role' and 'aria-*' attributes">
+	<p>relationship between user agents (e.g., browsers), accessibility APIs, and assistive technologies</p>
 </div></section>
 
 <!-- -->
@@ -362,19 +356,10 @@
 
 <section class="slide statement"><div>
 	<div>
-	<p>this is all complex and confusing...</p>
+	<p>Basically What is this thing and What does it do?</p>
 	</div>
 </div></section>
 
-<!-- -->
-
-<section class="slide"><div>
-	<img src="pictures/karlgroves-whatisthisthingandwhatdoesitdo.png" alt="Screenshot: video of the presentation by Karl Groves">
-	<p>as my former colleague Karl Groves succinctly put it,<br>ARIA helps answer the questions:<br>
-	<a target=_blank href="https://www.youtube.com/watch?v=YLihNhn_MO4" title="YouTube: Karl Groves - What is this thing and what does it do?">what is this thing and what does it do?</a></p>
-</div></section>
-
-<!-- -->
 
 <section class="slide listing"><div>
 <h3>what information does ARIA provide?</h3>
@@ -531,7 +516,8 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 
 <!-- -->
 
-<section class="slide code listing"><div>
+<section class="slide code listing">
+<div>
 <p>you <strong>can</strong> use a <code>&lt;span&gt;</code> to behave as, and be exposed just like, a link...</p>
 <pre><code>
 &lt;span tabindex="0" <mark>role="link"</mark>
@@ -541,7 +527,11 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 <p>example: <a target=_blank href="../demos/structure/role-link.html">link</a></p>
 <p>...but <strong>why would you?</strong></p>
 <p>unless there's a very good reason, just use <code>&lt;a href="..."&gt;...&lt;/a&gt;</code></p>
-</div></section>
+
+<p><a target=_blank href="https://humanwhocodes.com/blog/2013/01/29/you-cant-create-a-button/">You can't create a button by Nicholas Zakas</a></p>
+
+</div>
+</section>
 
 <!-- -->
 
@@ -707,7 +697,9 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 
 <section class="slide"><div>
 	<img src="pictures/sites/tpgi-short-note-on-aria-label.png" alt="">
-	<p>side note: <code>aria-label</code> / <code>aria-labelledby</code> / <code>aria-describedby</code> and arbitrary elements<br><small>(see <a href="https://www.tpgi.com/short-note-on-aria-label-aria-labelledby-and-aria-describedby/">Short note on aria-label, aria-labelledby, and aria-describedby</a>)</small></p>
+	<p>side note: <code>aria-label</code> / <code>aria-labelledby</code> / <code>aria-describedby</code> and arbitrary elements<br><small>
+		(see <a  target="_blank" href="https://www.tpgi.com/short-note-on-aria-label-aria-labelledby-and-aria-describedby/">Short note on aria-label, aria-labelledby, and aria-describedby</a>)</small>
+	</p>
 </div></section>
 
 <!-- -->
@@ -924,14 +916,6 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 </div>
 </div></section>
 
-<!-- -->
-
-<section class="slide cover impact"><div>
-    <div><p>my JavaScript sucks...<br><small>(but will hopefully convey the right concepts)</small></p></div>
-    <img src="pictures/background-danger-415-volts.jpg" class="cover" alt="Warning sign with lightning bolt and text: Danger 415 volts">
-</div></section>
-
-<!-- -->
 
 <section class="slide statement"><div>
 <div>
@@ -1551,117 +1535,10 @@ document.body.appendChild(newDiv);
 <p><strong>not appropriate</strong> if you're just marking up a site navigation...</p>
 </div></section>
 
-<!-- -->
 
 <section class="slide impact"><div>
 <div>
-	<h2>some shortcomings / problems with ARIA</h2>
-</div>
-</div></section>
-
-<!-- -->
-
-<section class="slide listing"><div>
-	<p>as useful as ARIA is, it is <strong>far from perfect</strong>...</p>
-	<ul>
-		<li>some patterns rooted deeply in native (Windows95 style) application paradigms – and as a result, quite limited/restrictive</li>
-		<li>straying from these patterns / using ARIA incorrectly can make things worse for users</li>
-		<li>certain roles/patterns define specific keyboard interactions – but work badly or not at all in touchscreen + AT scenarios</li>
-		<li>particularly for new roles/attributes (ARIA 1.1) and complex patterns, browser and AT support may be lacking</li>
-	</ul>
-</div></section>
-
-<!-- -->
-
-<section class="slide statement"><div>
-<div>
-	<h3>example:<br><strong>menu/menubar</strong></h3>
-</div>
-</div></section>
-
-<!-- -->
-
-<section class="slide code listing"><div>
-<pre><code class="html">
-&lt;div <mark>role="menubar"</mark>&gt;
-  &lt;div <mark>role="menuitem"</mark> ...&gt;...&lt;/div&gt;
-  &lt;div <mark>role="menu"</mark>&gt;
-    &lt;div <mark>role="menuitem"</mark> ...&gt;...&lt;/div&gt;
-    &lt;div <mark>role="menuitem"</mark> ...&gt;...&lt;/div&gt;
-    &lt;div <mark>role="menuitem"</mark> ...&gt;...&lt;/div&gt;
-    ...
-  &lt;/div&gt;
-  ...
-&lt;/div&gt;
-</code></pre>
-<p>example: <a target=_blank href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/menubar/menubar-1/menubar-1.html">ARIA Practices 1.1 Navigation Menubar</a></p>
-<p>most suitable for "application-like" web-app menus, not for general "website navigation"</p>
-<p><a target=_blank href="https://www.marcozehe.de/2018/09/22/wai-aria-menus-and-why-you-should-generally-avoid-using-them/">Marco Zehe: WAI-ARIA menus, and why you should generally avoid using them</a></p>
-</div></section>
-
-<!-- -->
-
-<section class="slide"><div>
-	<img src="pictures/aria-menu-spec.png" alt="Screenshot of the warning note on ARIA design patterns and touch device support in the 'Using ARIA' spec">
-	<p><a target=_blank href="https://www.w3.org/TR/wai-aria/#menu">ARIA 1.1 menu (role)</a></p>
-	<p><small>specific child elements only (<code>menuitem</code>, <code>menuitemcheckbox</code>, <code>menuitemradio</code>)</small></p>
-</div></section>
-
-<!-- -->
-
-<section class="slide"><div>
-	<img src="pictures/aria-menu-inappropriate-construct.png" alt="Example of a non-standard dropdown with a search form field - this cannot be expressed with ARIA, as it doesn't allow anything other than menu items, menu checkboxes, menu radio buttons">
-	<p>menu with a form control - not a valid ARIA menu...</p>
-</div></section>
-
-<!-- -->
-
-<section class="slide statement"><div>
-<div>
-	<h3>example:<br><strong>touchscreen</strong> + <strong>assistive technology</strong></h3>
-</div>
-</div></section>
-
-<!-- -->
-
-<section class="slide"><div>
-	<img src="pictures/aria-in-html-touch.png" alt="Screenshot of the warning note on ARIA design patterns and touch device support in the 'Using ARIA' spec">
-	<p><a target=_blank href="https://www.w3.org/TR/using-aria/#aria-touch">Using ARIA - 2.15 ARIA Design Patterns and Touch Device Support</a></p>
-</div></section>
-
-<!-- -->
-
-<section class="slide"><div>
-	<img src="pictures/problem-slider-android.png" alt="Montage of screenshots for slider on Android, showing the announcement to use volume keys to change value">
-	<p><a target=_blank href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/slider/slider-1.html">ARIA Practices 1.1 - Horizontal Slider</a> on Android / Chrome / TalkBack<br><small>(use volume keys...)</small></p>
-</div></section>
-
-<!-- -->
-
-<section class="slide"><div>
-	<img src="pictures/problem-slider-ios.png" alt="Screenshot of the slider on iOS">
-	<p><a target=_blank href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/slider/slider-1.html">ARIA Practices 1.1 - Horizontal Slider</a> on iOS / Safari / VoiceOver<br><small>(swipe up or down...)</small></p>
-</div></section>
-
-<!-- -->
-
-<section class="slide"><div>
-	<img src="pictures/problem-combobox-android.png" alt="Montage of screenshots for combobox on Android, showing no announcement of the combobox appearing">
-	<p><a target=_blank href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/combobox/aria1.1pattern/listbox-combo.html">ARIA Practices 1.1 - Combobox with Listbox Popup</a><br>on Android / Chrome / TalkBack</p>
-</div></section>
-
-<!-- -->
-
-<section class="slide"><div>
-	<img src="pictures/problem-combobox-ios.png" alt="Screenshot of the combobox on iOS">
-	<p><a target=_blank href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/combobox/aria1.1pattern/listbox-combo.html">ARIA Practices 1.1 - Combobox with Listbox Popup</a><br>on iOS / Safari / VoiceOver</p>
-</div></section>
-
-<!-- -->
-
-<section class="slide impact"><div>
-<div>
-	<h2>frameworks, web components, angular, react, etc?</h2>
+	<h2>Frameworks, web components, angular, react, etc?</h2>
 </div>
 </div></section>
 
@@ -1669,19 +1546,14 @@ document.body.appendChild(newDiv);
 
 <section class="slide listing"><div>
 	<ul>
-		<li>not everybody codes their complex applications from scratch using hand-made HTML/JavaScript/CSS</li>
-		<li>many ready-made libraries, scripts and frameworks offer at least basic ARIA support (by default, or as an "optional" setting or module)</li>
-		<li>particularly open source projects offer good opportunities to get involved – file issues, submit pull requests, improve documentation</li>
-		<li>lack of accessibility/ARIA support likely not down to malice, but a lack of knowledge or even understanding of the problem...</li>
+		<li>Not everybody codes their complex applications from scratch using hand-made HTML/JavaScript/CSS</li>
+		<li>Many ready-made libraries, scripts and frameworks offer at least basic ARIA support (by default, or as an "optional" setting or module)</li>
+		<li>Particularly open source projects offer good opportunities to get involved – file issues, submit pull requests, improve documentation</li>
+		<li>Lack of accessibility/ARIA support likely not down to malice, but a lack of knowledge or even understanding of the problem...</li>
 	</ul>
 </div></section>
 
-<!-- -->
 
-<section class="slide"><div>
-	<img src="pictures/sites/bootstrap-accessibility.png" alt="">
-	<p><a target=_blank href="http://getbootstrap.com/docs/4.1/getting-started/accessibility/">Bootstrap - Accessibility</a></p>
-</div></section>
 
 <!-- -->
 
@@ -1701,21 +1573,14 @@ document.body.appendChild(newDiv);
 
 <section class="slide impact"><div>
 <div>
-	<h2>recap...</h2>
+	<h2>Recap...</h2>
 </div>
 </div></section>
 
 <!-- -->
 
-<section class="slide cover impact"><div>
-	<div><p>ARIA is not a magic bullet</p></div>
-	<img src="pictures/kennedy-magic-bullet.jpg" class="cover" alt="Diagram: the remarkable path of the pristine bullet according to Warren Commission (showing entry and exit wounds on Kennedy and Connally">
-</div></section>
-
-<!-- -->
-
 <section class="slide listing"><div>
-	<h3>what ARIA is/isn't ...</h3>
+	<h3>What ARIA is/isn't ...</h3>
 	<ul>
 		<li>ARIA conveys "what is this thing and what does it do?" to assistive technologies</li>
 		<li>ARIA does not influence browser behavior itself – you need to manage keyboard handling, state, etc. yourself</li>
@@ -1742,16 +1607,11 @@ document.body.appendChild(newDiv);
 
 <section class="slide"><div>
 	<h2>get in touch</h2>
-	<p><a target=_blank href="https://twitter.com/patrick_h_lauke">@patrick_h_lauke</a><br>
-	<a target=_blank href="https://github.com/patrickhlauke/aria">github.com/patrickhlauke/aria</a><br>
-	<a target=_blank href="https://www.splintered.co.uk">splintered.co.uk</a><p>
+	<p><a target=_blank href="https://twitter.com/mpnkhan">@mpnkhan</a><br>
+	Thanks to  Patrick H. Lauke for this <a target=_blank href="https://github.com/patrickhlauke/aria"> slides</a><br>
 	<p><img src="pictures/cc-by-nc-sa.svg" width="271" height="64" alt="Creative Commons: Attribution Non-Commercial Share-Alike"></p>
 </div></section>
 
-	<!--
-		To hide progress bar from entire presentation
-		just remove “progress” element.
-		-->
 	<div class="progress"><div></div></div>
 	<script src="shower/shower.min.js"></script>
 </body>
