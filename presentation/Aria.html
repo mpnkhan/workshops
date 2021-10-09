@@ -14,7 +14,7 @@
 	<script>hljs.initHighlightingOnLoad();</script>
 
 </head>
-<body class="list">
+<body class="shower list">
 
 <header class="caption">
 	<h1>WAI-ARIA</h1>
@@ -439,7 +439,7 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 	<li>ARIA roles/attributes are a "promise" to users / assistive technologies (e.g. "this component is actually a button...") – you must ensure that it then behaves correctly</li>
 	<li>if you're not sure how to represent a particular complex widget or control, don't just throw ARIA roles and attributes at your markup – you're more likely to make things worse / more confusing / non-functional for assistive technology users</li>
 	</ul>
-	<p><small><a href="https://www.w3.org/TR/wai-aria-practices-1.1/#no_aria_better_bad_aria">W3C - WAI-ARIA 1.1 Authoring Practices</a></small></p>
+	<p><small><a href="https://www.w3.org/TR/wai-aria-practices-1.1/#no_aria_better_bad_aria" target="_blank">W3C - WAI-ARIA 1.1 Authoring Practices</a></small></p>
 </div></section>
 
 <!-- -->
@@ -468,7 +468,7 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 
 <section class="slide statement"><div>
 <div>
-	<p>...but we'll just focus on<br><strong>ARIA in HTML</strong></p>
+	<p><strong>ARIA in HTML</strong></p>
 </div>
 </div></section>
 
@@ -504,11 +504,6 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 
 <!-- -->
 
-<section class="slide"><div>
-	<img src="pictures/aria-club.jpg" alt="Fight Club spoof picture, with Steve Faulkner: The first rule of ARIA club is...you don't use ARIA">
-</div></section>
-
-<!-- -->
 
 <section class="slide listing"><div>
 	<blockquote><p>If you can use a native HTML element [<a target=_blank href="https://www.w3.org/TR/html/">HTML5</a>] or attribute with the semantics and behaviour you require already built in, instead of re-purposing an element and adding an ARIA role, state or property to make it accessible, then do so.</p></blockquote>
@@ -742,13 +737,6 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 <section class="slide"><div>
 	<img src="pictures/sites/html5accessibility.png" alt="">
 	<p><a target=_blank href="http://html5accessibility.com/">HTML5 accessibility</a></p>
-</div></section>
-
-<!-- -->
-
-<section class="slide"><div>
-	<img src="pictures/sites/w3c-html5-wai-aria.png" alt="">
-	<p>of course you can (and for many complex widgets, must) still use<br><a target=_blank href="https://www.w3.org/TR/html/dom.html#wai-aria" title="WAI-ARIA section in W3C HTML5 Specification">WAI-ARIA in HTML5</a></p>
 </div></section>
 
 <!-- -->
@@ -1464,7 +1452,7 @@ o.innerHTML = "Surprise!"; // show the notification
 		<li>sending something with <code>role="alert"</code> as part of your static HTML document has no effect – AT won't announce this when the page is loading</li>
 		<li>creating a dynamic element with <code>aria-live="..."</code> or an implicit live region role and filling it with content right away will (depending on timing) usually not give browser/AT enough time to "see" the element and notice the change ... again resulting in no announcement</li>
 	</ul>
-	<p><small><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions">Mozilla Developer Network: ARIA Live Regions</a></small></p>
+	<p><small><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions" target="_blank">Mozilla Developer Network: ARIA Live Regions</a></small></p>
 </div></section>
 
 <!-- -->
@@ -1536,9 +1524,35 @@ document.body.appendChild(newDiv);
 </div></section>
 
 
+<section class="slide listing"><div>
+	<p>as useful as ARIA is, it is <strong>far from perfect</strong>...</p>
+	<ul>
+		<li>some patterns rooted deeply in native (Windows95 style) application paradigms – and as a result, quite limited/restrictive</li>
+		<li>straying from these patterns / using ARIA incorrectly can make things worse for users</li>
+		<li>certain roles/patterns define specific keyboard interactions – but work badly or not at all in touchscreen + AT scenarios</li>
+		<li>particularly for new roles/attributes (ARIA 1.1) and complex patterns, browser and AT support may be lacking</li>
+	</ul>
+</div></section>
+
+<!-- -->
+
+<section class="slide listing">
+	<div>
+		<p>We have many ARIA attributes that are useful in theory but utter poop because they just don’t work across AT.</p>
+	<ul>
+		<li><a href="https://medium.com/dev-channel/why-authors-should-avoid-aria-relevant-5d3164fab1e3" target="_blank">aria-relevant should be avoided</a></li>
+		<li><a href="https://html5accessibility.com/stuff/2021/02/02/haspopup-haspoop/" target="_blank">has-popup has poop</a></li>
+		<li><a href="https://heydonworks.com/article/aria-controls-is-poop/" target="_blank">aria-controls has poop</a></li>
+	</ul>
+	<p> <a href="a11ysupport.io/" target="_blank">a11ysupport.io for AT incompatibilities</a>
+
+	</div>
+</section>
+<!-- -->
+
 <section class="slide impact"><div>
 <div>
-	<h2>Frameworks, web components, angular, react, etc?</h2>
+	<h2>JS Frameworks</h2>
 </div>
 </div></section>
 
