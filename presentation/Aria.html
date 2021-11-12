@@ -1550,11 +1550,124 @@ document.body.appendChild(newDiv);
 </section>
 <!-- -->
 
+<section class="slide impact">
+	<div>
+		<div>
+			<h2>SVG Accessibility</h2>
+		</div>
+	</div>
+</section>
+<!-- -->
+
+<!-- -->
+
+<section class="slide impact listing">
+	<div>
+		<div>
+			<h2>3 Types</h2>
+			<ol>
+				<li>Decorative</li>
+				<li>Meaningful</li>
+				<li>Interactive</li>
+			</ol>
+		</div>
+	</div>
+</section>
+<!-- -->
+<!-- -->
+
+<section class="slide code listing"><div>
+<p>Decorative</strong></p>
+<p>Use aria-hidden="true"</p>
+<pre><code>
+&lt;button&gt;
+&lt;svg xmlns="http://www.w3.org/2000/svg"  aria-hidden="true"&gt;
+    &lt;path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165"&gt;&lt;/path&gt;
+  &lt;/svg&gt;
+&lt;span class="sr-only"&gt;Hamburger menu&lt;/span&gt;
+&lt;/button&gt;
+</code></pre>
+</div></section>
+
+<!-- -->
+
+<!-- -->
+
+<section class="slide code listing"><div>
+<p>Meaningful</p>
+<p>Provide title</strong>...</p>
+<pre><code>
+&lt;svg aria-labelledBy="docTitle"&gt;
+ &lt;title id="docTitle"&gt;Here is a meaningfull title&lt;/title&gt;
+ ... 
+ &lt;/svg&gt;
+
+</code></pre>
+</div></section>
+
+<!-- -->
+
+
+<section class="slide code listing"><div>
+<p>Provide description</strong>...</p>
+<pre><code>
+&lt;svg aria-labelledBy="docTitle" aria-describedBy="docDesc"&gt;
+ &lt;title id="docTitle"&gt;Here is a meaningfull title&lt;/title&gt;
+ &lt;desc id="docDesc"&gt; Additional Description &lt;/desc&gt;
+ ... 
+ &lt;/svg&gt;
+
+</code></pre>
+</div></section>
+
+<!-- -->
+  
+
+<section class="slide code listing"><div>
+<p>Interactive</strong></p>
+<p>Make it focusable with xlink and tabindex="0"</strong>...</p>
+<pre><code>
+&lt;a xlink:href="http://paypal.com" tabindex="0"&gt;
+&lt;rect width="75" height="50" rx="20" ry="20" fill="#90ee90" 
+stroke="#228b22" stroke-fill="1" /&gt;
+&lt;text x="35" y="30" font-size="1em" text-anchor="middle"  
+fill="#000000"&gt;PayPal
+&lt;/text&gt;
+&lt;/a&gt;
+</code></pre>
+</div></section>
+
+<!-- -->
+
+<section class="slide code listing"><div>
+<p>If it is not a link, add a role to ensure it is semantic</strong>...</p>
+<pre><code>
+&lt;text y="20" role="heading" aria-level="1"&gt;Heading level one&lt;/text&gt;
+</code></pre>
+</div></section>
+
+
+<!-- -->
+<section class="slide code listing"><div>
+<div>For complex interactions, use combination of roles, tabindex="0", focusable="true"</div>
+<pre><code>
+&lt;g aria-label="Startdate" role="slider"  
+tabIndex="0" focusable="true" aria-orientation="horizontal" 
+aria-valuemin="Jan 01, 2013" aria-valuemax="Apr 09, 2014" 
+aria-valuetext="Mar 03, 2013" aria-valuenow="248.46153846153845"&gt;	
+</code></pre>
+<p>Demo: <a target=_blank href="../demos/svg/demo.html">PayPal AmCharts Plugin</a></p>
+</div></section>
+
+
+
+
 <section class="slide impact"><div>
 <div>
 	<h2>JS Frameworks</h2>
 </div>
-</div></section>
+</div>
+</section>
 
 <!-- -->
 

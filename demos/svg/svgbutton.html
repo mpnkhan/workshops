@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>SVG Buttons</title>
+    <style>
+        .sr-only {
+            border: 0;
+            clip: rect(0 0 0 0);
+            -webkit-clip-path: inset(50%);
+            clip-path: inset(50%);
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            width: 1px;
+            white-space: nowrap;
+        }
+
+@media screen and (-ms-high-contrast: active) {
+  .icon {
+      background: none;
+      fill: currentColor;
+	  border:1px dotted red;
+  }
+}	
+    </style>
+</head>
+
+<body>
+<a href="#Start">Start</a>
+
+<br><br>
+
+<p> 
+    <h2> Svg image wrapped in Button and svg image with aria-labelledyBy </h2>
+<button>
+<div>
+    <svg class="icon" aria-labelledby="close-button" height="16" role="img" viewBox="0 0 17 16" width="17" xmlns="http://www.w3.org/2000/svg">
+        <title id="close-button">Close</title>
+        <g fill="none" fill-rule="evenodd">
+        <path fill="none" d="M-3 20h23V-4H-3z"></path>
+        <path stroke="#2C2E2F" stroke-linecap="round" d="M1.477.672l14.046 14.656M1.477 15.328L15.523.672"></path>
+        </g>
+    </svg>
+</div>
+</button>
+</p>   
+    On IE11/ Jaws: Both button and svg receives focus <br>
+    Firefox/NVDA , button is announced as"button, link graphic close"
+    <br>
+            <table border="1">
+                    <caption>Test results</caption>
+                <tr>
+                    <th>Screen Reader</th>
+                    <th>Comments</th>
+                </tr>
+                <tr>
+                    <td>NVDA / Firefox</td>
+                    <td>
+                            button Close  graphic Close
+                    </td>
+                </tr>
+                <tr>
+                        <td> Jaws18 /IE11</td>
+                        <td>
+                            Close button Graphic
+                        </td>
+                </tr>
+                <tr>
+                        <td> Voiceover /Safari</td>
+                        <td>
+        
+                        </td>
+                </tr>                
+            </table>
+    
+</p>
+
+<p>
+<h2> Svg image wrapped in Button, Button having hidden text and svg image hidden with aria-hidden and focusable attribute false</h2>
+<button class="css-e2qqhq eqceez0" type="button">
+    <div class="css-1svllqd">
+        <svg  height="16" focusable="false" aria-hidden="true" viewBox="0 0 17 16" width="17" xmlns="http://www.w3.org/2000/svg">
+            <title id="close-button">Close</title>
+            <g fill="none" fill-rule="evenodd">
+            <path fill="none" d="M-3 20h23V-4H-3z"></path>
+            <path stroke="#2C2E2F" stroke-linecap="round" d="M1.477.672l14.046 14.656M1.477 15.328L15.523.672"></path>
+            </g>
+        </svg>
+    </div>
+    <span class="sr-only">Close</span>
+</button>
+</h2>
+</p>
+
+<p>
+        <table border="1">
+                <caption>Test results</caption>
+            <tr>
+                <th>Screen Reader</th>
+                <th>Comments</th>
+            </tr>
+            <tr>
+                <td>NVDA / Firefox</td>
+                <td>
+                        Close button       
+                </td>
+            </tr>
+            <tr>
+                    <td> Jaws18 /IE11</td>
+                    <td>
+                            Close button
+                    </td>
+            </tr>
+            <tr>
+                    <td> Voiceover /Safari</td>
+                    <td>
+    
+                    </td>
+            </tr>                
+        </table>
+    </p>
+
+</body>
+</html>
