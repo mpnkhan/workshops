@@ -49,34 +49,57 @@
 	<!-- [TODO] note that we assume here that devs have a good working knowledge of accessibility 101 / WCAG -->
 </div></section>
 
-<!-- -->
+
+<!-- Office only -->
 
 <section class="slide"><div>
-	<img src="pictures/sites/jqueryui.png" alt="">
+	<img src="pictures/sites/PPReactComp.png" alt="">
+	<p><a target=_blank href="https://github.paypal.com/pages/PayPal-UI-R/pp-react/">PayPal UI React Components</a></p>
+</div></section>
+
+<section class="slide"><div>
+	<img src="pictures/sites/PPdotComComp.png" alt="">
+	<p><a target=_blank href="https://github.paypal.com/pages/MPPContentDevelopment/pp-com-components/?path=/story/foundation-grid--grid-rows-min-height-layout">PayPal.com components</a></p>
+</div></section>
+
+<section class="slide"><div>
+	<img src="pictures/sites/ZettleComp.png" alt="">
+	<p><a target=_blank href="https://business-details.zettle.com/">Zettle Otto Components</a></p>
+</div></section>
+
+<!-- Office only -->
+
+<!-- External
+
+<section class="slide"><div>
+	<img src="pictures/sites/PPReactComp.png" alt="PP React Components">
 	<p><a target=_blank href="https://jqueryui.com">jQuery UI</a></p>
 </div></section>
 
-<!-- -->
 
 <section class="slide"><div>
 	<img src="pictures/sites/webcomponents.png" alt="">
 	<p><a target=_blank href="https://www.webcomponents.org/">webcomponents.org</a></p>
 </div></section>
 
-<!-- -->
+-->
 
 <section class="slide listing"><div>
-	<h3>the problem</h3>
-	<p>when building interactive controls, some (too many) web developers go "all out" on the JavaScript/CSS, but <strong>ignore/sidestep regular HTML controls completely</strong> (where native HTML equivalents are available) and <strong>ignore how these controls are exposed to assistive technologies</strong></p>
+	<h3>The problem</h3>
+	<ol>
+		<li>Home pages with ARIA present averaged 70% more detected errors than those without ARIA </li>
+		<li>Increased ARIA usage on pages correlated to higher detected errors. The more ARIA attributes that were present, the more detected accessibility errors could be expected. </li>
+	</ol>	
+	<p><small><a target=_blank href="https://webaim.org/projects/million/#aria">The WebAIM Million - The 2022 report on the accessibility of the top 1,000,000 home pages</a></small></p>
 </div></section>
 
 <!-- -->
 
 <section class="slide listing"><div>
-	<h3>accessibility is a broad subject</h3>
+	<h3>Accessibility is a broad subject</h3>
 	<ul>
 		<li>the general concept of accessibility covers a large spectrum of disabilities / user needs</li>
-		<li>accessibility does not just mean "blind users with screen readers"</li>
+		<li>Accessibility does not just mean "blind users with screen readers"</li>
 		<li>sighted keyboard users, users with colour blindness / deficiencies, deaf / hard of hearing users, users with cognitive disabilities...</li>
 		<li>however, ARIA is (almost) exclusively about how to ensure that web content is correctly conveyed to assistive technologies (screen readers, screen magnifiers with screen reading capability, etc)</li>
 	</ul>
@@ -249,21 +272,20 @@
 	<p><a target=_blank href="https://www.tpgi.com/free-accessibility-testing-tools/">Accessibility Viewer (aViewer)</a></p>
 </div></section>
 
-<!-- -->
+<!-- 
 
 <section class="slide"><div>
 	<img src="pictures/safari-web-inspector-accessibility-panel.png" alt="Safari's Web Inspector, showing a separate 'Accessibility' section under its 'Node' inspection sidebar, listing basic information such as the current node's computed role">
 	<p><a target=_blank href="https://webkit.org/blog/3302/aria-and-accessibility-inspector/">James Craig - Using ARIA 1.0 and the WebKit Accessibility Node Inspector</a></p>
 </div></section>
 
-<!-- -->
 
 <section class="slide"><div>
 	<img src="pictures/axinspector.png" alt="Xcode's Accessibility Inspector, showing accessibility tree/attributes for a selected element in Chrome">
 	<p>Xcode Accessibility Inspector<br><small>(but for Chrome, remember to turn on accessibility mode in <code>chrome://accessibility</code>)</small> </p>
 </div></section>
 
-<!-- -->
+-->
 
 <section class="slide code"><div>
 <div>
@@ -446,7 +468,7 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 
 <section class="slide"><div>
 	<img src="pictures/sites/w3c-aria-authoring-practices.png" alt="">
-	<p>WAI-ARIA spec can be dry/technical - use for reference<br><a target=_blank href="https://www.w3.org/TR/wai-aria-practices/">W3C - WAI-ARIA 1.1 Authoring Practices</a> more digestible.</p>
+	<p>WAI-ARIA spec can be dry/technical - use for reference<br><a target=_blank href="https://www.w3.org/TR/wai-aria-practices/">ARIA Authoring Practices Guide (APG)</a> more digestible.</p>
 </div></section>
 
 <!-- -->
@@ -457,14 +479,14 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 </div>
 </div></section>
 
-<!-- -->
+<!-- 
 
 <section class="slide"><div>
 	<img src="pictures/sites/tpgi-aria-in-svg.png" alt="">
 	<p><a target=_blank href="tps://www.tpgi.com/using-aria-enhance-svg-accessibility/">Using ARIA to enhance SVG accessibility</a></p>
 </div></section>
 
-<!-- -->
+-->
 
 <section class="slide statement"><div>
 <div>
@@ -583,7 +605,7 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 
 <section class="slide listing"><div>
 	<p>All interactive widgets must be focusable and scripted to respond to standard key strokes or key stroke combinations where applicable. [...]</p>
-	<p>Refer to the <a target=_blank href="https://www.w3.org/TR/wai-aria-practices/#keyboard">keyboard and structural navigation</a> and <a target=_blank href="https://www.w3.org/TR/wai-aria-practices/#aria_ex">design patterns and widgets</a> sections of the <a target=_blank href="https://www.w3.org/TR/wai-aria-practices/">WAI-ARIA 1.1 Authoring Practices</a></p>
+	<p>Refer to  <a target=_blank href="https://www.w3.org/WAI/ARIA/apg/patterns/">design patterns and widgets</a> sections of the <a target=_blank href="https://www.w3.org/WAI/ARIA/apg/patterns/">ARIA Authoring Practices Guide</a></p>
 </div></section>
 
 <!-- -->
@@ -651,7 +673,7 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 <pre><code class="html">
 &lt;span tabindex="0" role="button"&gt;
     &lt;span class="glyphicon glyphicon-remove"&gt;
-        <mark>&lt;span class="..."&gt;Delete&lt;/span&gt;</mark>
+        <mark>&lt;span class="sr-only"&gt;Delete&lt;/span&gt;</mark>
     &lt;/span&gt;
 &lt;/span&gt;
 
@@ -671,11 +693,11 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
     &lt;span class="glyphicon glyphicon-remove"&gt;&lt;/span&gt;
 &lt;/span&gt;
 
-&lt;span tabindex="0" role="button" <mark>aria-labelledby="..."</mark>&gt;
+&lt;span tabindex="0" role="button" <mark>aria-labelledby="lby"</mark>&gt;
     &lt;span class="glyphicon glyphicon-remove"&gt;&lt;/span&gt;
 &lt;/span&gt;
 ...
-&lt;span id="<mark>...</mark>" class="..."&gt;Delete&lt;/span&gt;
+&lt;span id="<mark>lby</mark>" class="..."&gt;Delete&lt;/span&gt;
 </code></pre>
 	<p>refer to <a target=_blank href="https://www.w3.org/TR/wai-aria/#namecalculation">WAI-ARIA 1.1 - 5.2.7. Accessible Name Calculation</a></p>
 </div></section>
@@ -685,19 +707,84 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 <section class="slide"><div>
 	<img src="pictures/chrome-devtools-accessibility-panel-accessible-name.png" alt="Screenshot of Chrome Developer Tools' accessibility panel, showing details about which attributes - content, title, aria-label, aria-labelledby - contribute to the element's name">
 	<p>Chrome DevTools' accessibility panel can help understand which attributes contribute to an element's name</p>
-	<p>example: <a target=_blank href="../demos/accessible-name-calculation/">accessible name calculation</a></p>
+	<p>example: <a target=_blank href="../demos/accessible-name-calculation/index.html">accessible name calculation</a></p>
 </div></section>
 
 <!-- -->
 
-<section class="slide"><div>
-	<img src="pictures/sites/tpgi-short-note-on-aria-label.png" alt="">
-	<p>side note: <code>aria-label</code> / <code>aria-labelledby</code> / <code>aria-describedby</code> and arbitrary elements<br><small>
-		(see <a  target="_blank" href="https://www.tpgi.com/short-note-on-aria-label-aria-labelledby-and-aria-describedby/">Short note on aria-label, aria-labelledby, and aria-describedby</a>)</small>
-	</p>
-</div></section>
+<section class="slide statement">
+	<div>
+		<div>
+			<h3>aria-labelledby usage</h3>
+		</div>
+	</div>
+</section>
 
 <!-- -->
+
+<section class="slide listing code">
+	<div>
+		<p>please do use the native features wherever practical</p>
+<pre><code class="html">
+
+&lt;label for="fname"&gt;<mark>Name</mark>&lt;/label&gt;&lt;input type="text" id="fname"&gt;
+&lt;img alt="<mark>Choclate</mark>"&gt;
+&lt;button><mark>Continue</mark>&lt;/button&gt;
+</code></pre>
+<p>aria-labelledby is one of secondary methods to label native HTML UI elements</p>
+	</div>
+</section>
+
+<!-- -->
+<section class="slide listing code">
+	<div>
+		<p>Hiding Content Has No Effect on Accessible Name or Description Calculation</p>
+<pre><code class="html">
+ &lt;a href="home.html" aria-labelledby="unseen"&gt;
+now you don't &lt;/a&gt;
+
+ &lt;p id="unseen" <mark>hidden</mark>>Now you hear me &lt;/p&gt;
+Accessible name: "Now you hear me"
+</code></pre>
+	</div>
+</section>
+
+<!-- -->
+<section class="slide listing code">
+	<div>
+		<p>Self Reference</p>
+<pre><code class="html">
+ &lt;a href="home.html" aria-labelledby="<mark>unseen home</mark>" id="<mark>home</mark>"&gt;
+now you do&lt;/a&gt;
+
+ &lt;p id="<mark>unseen</mark>" hidden>Now you hear me &lt;/p&gt;
+Accessible name: "Now you hear me, now you do"
+</code></pre>
+	</div>
+</section>
+
+<!-- -->
+<section class="slide listing code">
+	<div>
+		<p>Multiple References</p>
+	<pre><code class="html">
+&lt;a href="alphabet.html" id="pre" 
+aria-labelledby="pre a b c"&gt;Easy as&lt;/a&gt;
+
+accessible name: "Easy as A B C"
+
+&lt;a href="alphabet.html" id="pre" 
+aria-labelledby="pre c b a"&gt;Easy as&lt;/a&gt;
+
+accessible name: "Easy as C B A"
+
+&lt;span id="a"&gt;A&lt;/span&gt; 
+&lt;span id="b"&gt;B&lt;/span&gt;
+&lt;span id="c"&gt;C&lt;/span&gt;
+	</code></pre>
+	</div>
+</section>
+
 
 <section class="slide impact"><div>
 <div>
@@ -806,11 +893,6 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 <pre><code>
 &lt;img src="..." alt="alternative text"&gt;
 </code></pre>
-<p>if you're using embedded <code>&lt;svg&gt;</code>, use ARIA to achieve the same:</p>
-<pre><code>
-&lt;svg <mark>role="img"</mark> <mark>aria-label="alternative text"</mark>&gt; ... &lt;/svg&gt;
-</code></pre>
-<p>example: <a target=_blank href="../demos/image/index.html">embedded SVG image</a></p>
 </div></section>
 
 <!-- -->
