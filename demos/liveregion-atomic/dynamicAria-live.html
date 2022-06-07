@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	  <title>Dynamic Alert</title>
+	  <title>Dynamic -Aria-live</title>
     <meta charset='utf-8' />
     <meta name="description" content="Test : testing" />
     <link rel="stylesheet" type="text/css" media="screen" href="../css/stylesheet.css"> 
@@ -55,9 +55,9 @@ body {
 
 <h1>Testing <code>aria-live="assertive"</code> dynamically</h1>
 
-<p>Test versions: JAWS 18, IE11, NVDA 2017.2, VoiceOver iOS 10</p>
+<p>Test versions: JAWS 2021, IE Edge, NVDA 2021.3.3, VoiceOver 12.4</p>
 
-<h2>1: Adding a <em>new element</em> with <code>aria-live="assertive"</code> to the DOM dynamically: <span class="works">WORKS</span></h2>
+<h2>1: Adding a <em>new element</em> with <code>aria-live="assertive"</code> to the DOM dynamically: <span class="doesnt-work">does NOT work</span></h2>
 
 <p>Clicking the button below adds a new div with <code>aria-live="assertive"</code> directly to the DOM. This is to check whether screen reader supports them being added dynamically, or if they have to be in the DOM already and have their contents changed later to be read out (like aria live regions do on some browsers).</p>
 
@@ -66,7 +66,10 @@ body {
 
 <button id="open1">Open an alert</button>
 
-<p class="results"><span class="works">Works in JAWS + IE, JAWS + Chrome, VoiceOver iOS, NVDA + Firefox.</span></p>
+<p class="results">
+  <div class="works">Works : VO + Chrome, VO + Safari </div>
+  <div class="doesnt-work">NOT working: Jaws+IE, Jaws + Chrome, NVDA + Chrome, NVDA + Firefox</div>
+</p>
 
 <hr>
 
@@ -76,7 +79,12 @@ body {
 
 <button id="open2">Open an alert</button>
 <div id="msg2">You need to fill in your username.</div>
-<p class="results"><span class="works">Works with NVDA Firefox.</span><span class="doesnt-work">Does not work anywhere else.</span></p>
+
+<p class="results">
+  <div class="works">Works : VO + Chrome</div>
+  <div class="doesnt-work">NOT working: Jaws+IE, Jaws + Chrome, NVDA + Chrome, NVDA + Firefox, VO + Safari</div>
+</p>
+
 
 <hr>
 
@@ -87,13 +95,13 @@ body {
 <button id="open3">Open an alert</button>
 <div aria-live="assertive" id="msg3"></div>
 
-<p class="results"><span class="works">Works in JAWS + IE, JAWS + Chrome, VoiceOver iOS, NVDA + Firefox.</span></p>
+<p class="results"><span class="works">Works in JAWS + IE, JAWS + Chrome, VO + Safari, VO + Chrome, NVDA + Firefox.</span></p>
 
 <hr>
 
-<h2>4: Making an invisible (<code>display: none</code>) element already in the DOM visible: <span class="doesnt-workworks">UNRELIABLE</span></h2>
+<h2>4: Making an invisible (<code>display: none</code>) element already in the DOM visible: <span class="doesnt-work">does NOT work</span></h2>
 
-<h3><span class="works">Works when</span> the <code>element.style.display</code> property is directly altered in JS</h3>
+<h3><!--span class="works">Works when</span--> the <code>element.style.display</code> property is directly altered in JS</h3>
 
 <pre><code>&lt;div aria-live="assertive" style="display: none"&gt;Please enter your postcode&lt;/div&gt;
 ...
@@ -104,9 +112,18 @@ errorMsg.style.display = "block";</code></pre>
 <div aria-live="assertive" id="msg4" style="display: none">Please enter your postcode</div>
 
 <p>(This also works if the div's style is initially set in a stylesheet rather than inline; what's important is that the <strong>modification needs to be done at the JS level</strong>)</p>
-<p class="results"><span class="works">Works in JAWS + IE, JAWS + Chrome, VoiceOver iOS, NVDA + Firefox.</span></p>
 
-<h3><span class="doesnt-work">Does not work</span> when new CSS is written to the page</h3>
+<p class="results">
+  <div class="works">Works : Jaws+IE, Jaws + Chrome, VO + Safari, VO + Firefox</div>
+  <div class="doesnt-work">NOT working: NVDA + Chrome, NVDA + Firefox</div>
+</p>
+
+<p class="results">
+  <div class="works">Works : Jaws+IE, Jaws + Chrome, VO + Safari, VO + Firefox</div>
+  <div class="doesnt-work">NOT working: NVDA + Chrome, NVDA + Firefox</div>
+</p>
+
+<h3><!--span class="doesnt-work">Does not work</span--> when new CSS is written to the page</h3>
 
 <pre><code>&lt;style id="myStyleElement"&gt;&lt;/style&gt;
 
@@ -117,20 +134,24 @@ myStyleElement.innerHTML = "#errorMsg { display: block; }";</code></pre>
 <style id="style4_2"></style>
 
 <p>Notice the difference: we're modifying CSS only, but not via JS. This does not trigger the alert in JAWS.</p>
-<p class="results"><span class="works">Works in JAWS + Chrome, NVDA + Firefox.</span><span class="doesnt-work">Does not work in JAWS + IE. Untested on VoiceOver, todo</span></p>
+
+<p class="results">
+  <div class="works">Works : Jaws+IE, Jaws + Chrome, VO + Safari, VO+ Firefox</div>
+  <div class="doesnt-work">NOT working: NVDA + Chrome, NVDA + Firefox</div>
+</p>
 
 <hr>
 
-<h2>5: Making an invisible (<code>[hidden]</code> attribute) element already in the DOM visible: <span class="doesnt-work">does NOT work</span></h2>
+<h2>5: Making an invisible (<code>[hidden]</code> attribute) element already in the DOM visible: <span class="works">WORKS</span></h2>
 
 <pre><code>errorMsg.removeAttribute("hidden");</code></pre>
 
 <button id="open5">Open an alert</button>
 <div aria-live="assertive" id="msg5" hidden>Please enter your city</div>
 
-<p class="results"><span class="works">Works on JAWS + Chrome, VoiceOver iOS, NVDA + Firefox.</span> <span class="doesnt-work">Does not work in JAWS + IE.</span></p>
-
-			
+<p class="results">
+  <div class="works">Works : Jaws + IE, Jaws + Chrome, VO, NVDA + Chrome, NVDA + Firefox, VO + Safari, VO + Firefox</div>
+</p>			
 
 
 			</div> <!--content-->

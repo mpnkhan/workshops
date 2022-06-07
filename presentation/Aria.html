@@ -1580,24 +1580,44 @@ o.innerHTML = "Surprise!"; // show the notification
 
 -->
 
+<!-- -->
+
 <section class="slide code listing"><div>
-<pre><code class="js">// create a new div element 
-var newDiv = document.createElement("div");
+	<h3> Testing role="alert"</h3>
+<p>That works consistently in all browser, AT combos</p>
+<p>Modifying the innerHTML of a role="alert" element already in the DOM</p>
+<pre><code class="js">
+errorMsg.innerHTML = "You need to fill in your password.";
+</code></pre>
 
-// set aria-live property
-newDiv.setAttribute("aria-live", "polite");
+<p>Adding a new element with role="alert" to the DOM dynamically</p>
+<pre><code class="js">
+el.insertAdjacentHTML('afterend', 
+		'&lt;div role="alert"&gt;You need to fill in your username&lt;/div&gt;');
+</code></pre>
+<p>example: <a target=_blank href="../demos/liveregion-atomic/dynamicAlertRole.html">Dynamic alerts</a></p>
 
-// and give it some content 
-var newContent = document.createTextNode("Surprise!"); 
-
-// add the text node to the newly created div
-newDiv.appendChild(newContent);
-
-// add the new div to the page
-document.body.appendChild(newDiv);
-
-// ... WON'T ACTUALLY WORK</code></pre>
 </div></section>
+
+<!-- -->
+<section class="slide code listing"><div>
+	<h3> Testing aria-live="assertive"</h3>
+<p>That works consistently in all browser, AT combos</p>
+<p>Modifying the innerHTML of a aria-live="assertive" element already in the DOM</p>
+<pre><code class="js">
+errorMsg.innerHTML = "You need to fill in your password.";
+</code></pre>
+
+<p>Making an invisible ([hidden] attribute) element already in the DOM visible</p>
+<pre><code class="js">
+errorMsg.removeAttribute("hidden");
+</code></pre>
+<p>example: <a target=_blank href="../demos/liveregion-atomic/dynamicAria-live.html">Dynamic aria-live</a></p>
+
+</div></section>
+
+
+
 
 <!-- -->
 
