@@ -196,14 +196,14 @@
 	</ul>
 </div></section>
 
-<!-- -->
+<!--
 
 <section class="slide"><div>
 	<img src="pictures/dom-and-accessibility-tree.png" alt="Comparison of a typical DOM structure and the matching accessibility tree structure">
 	<p>a typical DOM (as shown in a browser's developer tools, which simplifies some aspects like text nodes) and the matching accessibility tree</p>
 </div></section>
 
-<!-- -->
+ -->
 
 <section class="slide"><div>
 	<img src="pictures/sites/marcozehe-accessibility-apis.png" alt="">
@@ -214,14 +214,14 @@
 
 <section class="slide impact"><div>
 <div>
-	<h2><strong>assistive</strong> technologies</h2>
+	<h2><strong>Assistive</strong> Technologies - (AT)</h2>
 </div>
 </div></section>
 
 <!-- -->
 
 <section class="slide listing"><div>
-	<h3>assistive technologies</h3>
+	<h3>Assistive Technologies</h3>
 	<ul>
 	<li>NVDA (free)</li>
 	<li>Narrator (free)</li>
@@ -401,7 +401,7 @@
 	<pre><code>&lt;div tabindex="0"
 <mark>role="button"</mark> onkeyup="..."
 onclick="..."&gt;Test&lt;/div&gt;</code></pre>
-	<p><small><a target=_blank href="../demos/button/index-keyboard-focus-handler-role.html">faked button with appropriate role</a></small></p>
+	<p>Demo: <small><a target=_blank href="../demos/button/index-keyboard-focus-handler-role.html">faked button with appropriate role</a></small></p>
 </div>
 </div></section>
 
@@ -459,14 +459,14 @@ onclick="..."&gt;Test&lt;/div&gt;</code></pre>
 	<li>ARIA roles/attributes are a "promise" to users / assistive technologies (e.g. "this component is actually a button...") – you must ensure that it then behaves correctly</li>
 	<li>if you're not sure how to represent a particular complex widget or control, don't just throw ARIA roles and attributes at your markup – you're more likely to make things worse / more confusing / non-functional for assistive technology users</li>
 	</ul>
-	<p><small><a href="https://www.w3.org/TR/wai-aria-practices-1.1/#no_aria_better_bad_aria" target="_blank">W3C - WAI-ARIA 1.1 Authoring Practices</a></small></p>
+	<p><small><a href="https://w3c.github.io/aria-practices/#no_aria_better_bad_aria" target="_blank">W3C - WAI-ARIA Authoring Practices 1.2</a></small></p>
 </div></section>
 
 <!-- -->
 
 <section class="slide"><div>
 	<img src="pictures/sites/w3c-aria-authoring-practices.png" alt="">
-	<p>WAI-ARIA spec can be dry/technical - use for reference<br><a target=_blank href="https://www.w3.org/TR/wai-aria-practices/">ARIA Authoring Practices Guide (APG)</a> more digestible.</p>
+	<p>WAI-ARIA spec can be dry/technical - use for reference<br><a target=_blank href="https://www.w3.org/WAI/ARIA/apg/">ARIA Authoring Practices Guide (APG)</a> more digestible.</p>
 </div></section>
 
 <!-- -->
@@ -1618,8 +1618,7 @@ errorMsg.removeAttribute("hidden");
 
 
 
-
-<!-- -->
+<!-- 
 
 <section class="slide listing"><div>
 	<p>by default, live regions only announce any new/changed content (with some browser/AT variations). however, this can be controlled:</p>
@@ -1630,7 +1629,7 @@ errorMsg.removeAttribute("hidden");
 	<p><small>(there's also <code>aria-relevant</code>, but it is badly supported/pointless - see <a target=_blank href="https://medium.com/dev-channel/why-authors-should-avoid-aria-relevant-5d3164fab1e3">Aaron Leventhal and Rob Dodson: Why authors should avoid aria-relevant</a>).</small></p>
 </div></section>
 
-<!-- -->
+-->
 
 <section class="slide statement"><div>
 <div>
@@ -1661,7 +1660,7 @@ errorMsg.removeAttribute("hidden");
 &lt;div <mark>role="tabpanel"</mark> id="panel2" <mark>aria-hidden="true"</mark>&gt;...&lt;/div&gt;
 &lt;div <mark>role="tabpanel"</mark> id="panel3" <mark>aria-hidden="true"</mark>&gt;...&lt;/div&gt;
 </code></pre>
-<p>example: <a target=_blank href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html">ARIA Practices 1.1 Tabs with Automatic Activation</a></p>
+<p>example: <a target=_blank href="https://www.w3.org/WAI/ARIA/apg/example-index/tabs/tabs-automatic.html">ARIA Practices 1.1 Tabs with Automatic Activation</a></p>
 <p>variations: <a target=_blank href="https://www.marcozehe.de/2013/02/02/advanced-aria-tip-1-tabs-in-web-apps/">Marco Zehe: Advanced ARIA tip #1: Tabs in web apps</a></p>
 <p><strong>not appropriate</strong> if you're just marking up a site navigation...</p>
 </div></section>
@@ -1865,8 +1864,8 @@ aria-valuetext="Mar 03, 2013" aria-valuenow="248.46153846153845"&gt;
 	<ul>
 		<li>understand/break-up complex app into simple component elements</li>
 		<li>you don't always need ARIA – appropriate HTML usually best</li>
-		<li><a target=_blank href="https://www.w3.org/TR/wai-aria-practices-1.1/#no_aria_better_bad_aria">No ARIA is better than Bad ARIA</a></li>
-		<li>consult <a target=_blank href="https://www.w3.org/TR/wai-aria-practices-1.1/">ARIA Practices</a> to see if they match an existing pattern</li>
+		<li><a target=_blank href="https://w3c.github.io/aria-practices/#no_aria_better_bad_aria">No ARIA is better than Bad ARIA</a></li>
+		<li>consult <a target=_blank href="https://www.w3.org/WAI/ARIA/apg/practices/">ARIA Practices</a> to see if they match an existing pattern</li>
 		<li>follow the <a target=_blank href="https://www.w3.org/TR/using-aria/">rules of ARIA</a></li>
 		<li>check main <a target=_blank href="https://www.w3.org/TR/wai-aria/">ARIA specification</a> for correct syntax, expected attributes, valid values</li>
 		<li>test in actual browser/AT</li>
@@ -1877,8 +1876,8 @@ aria-valuetext="Mar 03, 2013" aria-valuenow="248.46153846153845"&gt;
 
 <section class="slide"><div>
 	<h2>get in touch</h2>
-	<p><a target=_blank href="https://twitter.com/mpnkhan">@mpnkhan</a><br>
-	Thanks to  Patrick H. Lauke for this <a target=_blank href="https://github.com/patrickhlauke/aria"> slides</a><br>
+	<p><a target=_blank href="https://twitter.com/mpnkhan">Twitter: @mpnkhan</a><br>
+	<!-- Thanks to  Patrick H. Lauke for this <a target=_blank href="https://github.com/patrickhlauke/aria"> slides</a><br> -->
 	<p><img src="pictures/cc-by-nc-sa.svg" width="271" height="64" alt="Creative Commons: Attribution Non-Commercial Share-Alike"></p>
 </div></section>
 
